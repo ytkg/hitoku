@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "hitoku/version"
+require_relative 'hitoku/version'
 
 module Hitoku
   class Error < StandardError; end
