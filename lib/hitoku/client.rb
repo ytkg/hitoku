@@ -15,7 +15,7 @@ module Hitoku
     def set(name, value)
       credentials = read_credentials
 
-      write_credentials(credentials.merge({ name => value }))
+      write_credentials(credentials.merge({ name.to_sym => value }))
     end
 
     private
