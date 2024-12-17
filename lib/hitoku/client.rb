@@ -18,6 +18,12 @@ module Hitoku
       write_credentials(credentials.merge({ name.to_sym => value }))
     end
 
+    def del(name)
+      credentials = read_credentials
+
+      write_credentials(credentials.reject { |key, _| key == name  })
+    end
+
     private
 
     def key

@@ -18,6 +18,8 @@ module Hitoku
           get(ARGV[1])
         when 'set'
           set(ARGV[1], ARGV[2])
+        when 'del'
+          del(ARGV[1])
         else # rubocop:disable Lint/DuplicateBranch
           help
         end
@@ -32,6 +34,7 @@ module Hitoku
         puts 'Examples:'
         puts '  hitoku set <name> <value>'
         puts '  hitoku get <name>'
+        puts '  hitoku del <name>'
         puts '  hitoku show'
       end
 
@@ -55,6 +58,11 @@ module Hitoku
       def set(name, value)
         client = Client.new
         client.set(name, value)
+      end
+
+      def del(name)
+        client = Client.new
+        client.del(name)
       end
     end
   end
